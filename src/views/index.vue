@@ -5,13 +5,13 @@
             <p><img src="https://user-gold-cdn.xitu.io/2018/11/21/1673556f92437013?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" width="30" height="30"></p>
         </header>
         <ul class="m_header">
-            <li v-for="(item,index) in navList" :class="navIndex==index?'m_li_color':''" @click="switchNav(item,index)">{{item}}</li>
+            <li v-for="(item,index) in navList" :key="index" :class="navIndex==index?'m_li_color':''" @click="switchNav(item,index)">{{item}}</li>
         </ul>
         <ul class="list-header">
-            <li v-for="(item,index) in classifyList" :class="classifyIndex==index?'m_li_color':''" @click="switchListNav(item,index)">{{item}}</li>
+            <li v-for="(item,index) in classifyList" :key="index" :class="classifyIndex==index?'m_li_color':''" @click="switchListNav(item,index)">{{item}}</li>
         </ul>
         <ul class="entry-list">
-            <li class="item" v-for="item in list" @click="changePage(item.href)">
+            <li class="item" v-for="(item, index) in list" :key="index" @click="changePage(item.href)">
                 <div class="entry-box">
                     <div class="entry">
                             <div class="content-box">
